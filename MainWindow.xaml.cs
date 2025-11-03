@@ -37,6 +37,77 @@ namespace WpfApp1
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
 
+            string firstName = TxtFirstName.Text;
+            string lastName = TxtLastName.Text;
+            string phoneNumber = TxtPhoneNumber.Text;
+
+            string vehicleMake = "";
+            if (CmbVehicleMake.SelectedItem != null)
+            {
+                vehicleMake = (CmbVehicleMake.SelectedItem as ComboBoxItem).Content.ToString();
+            }
+
+            string vehicleModel = TxtVehicleModel.Text;
+            string vehicleColour = TxtVehicleColour.Text;
+
+            string vehicleYearStr = "";
+            if (CmbVehicleYear.SelectedItem != null)
+            {
+                vehicleYearStr = (CmbVehicleYear.SelectedItem as ComboBoxItem).Content.ToString();
+            }
+
+            bool engineOil = ChkEngineOilChange.IsChecked == true;
+            bool transOil = ChkTransmissionOilChange.IsChecked == true;
+            bool airFilter = ChkAirFilterChange.IsChecked == true;
+
+            if (firstName == "" || lastName == "" || phoneNumber == "" || vehicleMake == "" || vehicleModel == "" || vehicleColour == "" || vehicleYearStr == "")
+            {
+                MessageBox.Show("Null fields not accepted");
+                return;
+            }
+
+            if (engineOil == false && transOil == false && airFilter == false)
+            {
+                MessageBox.Show("Select at least one service");
+            }
+
+            int tempYear = int.Parse(vehicleYearStr);
+            decimal totalCost = 0;
+
+            if (engineOil == true)
+            {
+                totalCost = totalCost + 60;
+            }
+
+            if (transOil == true)
+            {
+                totalCost = totalCost + 120;
+            }
+
+            if (airFilter == true)
+            {
+                totalCost = totalCost + (decimal)40.5;
+            }
+
+            Service newService = new Service(firstName, lastName, phoneNumber, vehicleMake, vehicleModel, tempYear, vehicleColour, engineOil, transOil, airFilter, totalCost);
+
+            listOfServices.Add(newService);
+
+            CustomerListView.Items.Add(new
+            {
+                pCustomerID = newService.GetCustomerID(),
+                pFirstName = newService.GetFirstName(),
+                pLastName = newService.GetLastName(),
+                pPhoneNumber = newService.GetPhoneNumber(),
+                pVehicleMake = newService.GetVehicleMake(),
+                pVehicleModel = newService.GetVehicleModel(),
+                pVehicleYear = newService.GetVehicleYear(),
+                pVehicleColour = newService.GetVehicleColour(),
+                pEngOilChange = newService.GetEngOilChange(),
+                pTransOilChange = newService.GetTransOilChange(),
+                pAirFilterChange = newService.GetAirFilterChange(),
+                pTotalCost = newService.GetTotalCost()
+            });
         }
 
         /// <summary>

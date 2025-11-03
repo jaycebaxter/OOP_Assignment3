@@ -135,6 +135,15 @@ namespace WpfApp1
         }
 
         /// <summary>
+        /// Getter for vehicleColour
+        /// </summary>
+        /// <returns></returns>
+        public string GetVehicleColour()
+        {
+            return vehicleColour;
+        }
+
+        /// <summary>
         /// Getter for engOilChange
         /// </summary>
         /// <returns> engOilChange </returns>
