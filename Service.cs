@@ -16,7 +16,7 @@ namespace WpfApp1
         private string? phoneNumber;
         private string vehicleMake;
         private string vehicleModel;
-        private string vehicleColour;
+        private string? vehicleColour;
         private int vehicleYear;
         private bool engOilChange;
         private bool transOilChange;
@@ -51,19 +51,19 @@ namespace WpfApp1
         // Parameterized constructor
         // I'm using P to denote that it's a parameter instead of a variable name... so I don't get confused
         // Rename later?
-        public Service(string pFirstName, string pLastName, string pPhoneNumber, string pVehicleMake, string pVehicleModel, string pVehicleColour, int pVehicleYear, bool pEngOilChange, bool pTransOilChange, bool pAirFilterChange, decimal pTotalCost)
+        public Service(string pFirstName, string pLastName, string pPhoneNumber, string pVehicleMake, string pVehicleModel, int pVehicleYear, string pVehicleColour, bool pEngOilChange, bool pTransOilChange, bool pAirFilterChange, decimal pTotalCost)
         {
-            firstName = pFirstName;
-            lastName = pLastName;
-            phoneNumber = pPhoneNumber;
-            vehicleMake = pVehicleMake;
-            vehicleModel = pVehicleModel;
-            vehicleColour = pVehicleColour;
-            vehicleYear = pVehicleYear;
-            engOilChange = pEngOilChange;
-            transOilChange = pTransOilChange;
-            airFilterChange = pAirFilterChange;
-            totalCost = pTotalCost;
+            SetFirstName(pFirstName);
+            SetLastName(pLastName);
+            SetPhoneNumber(pPhoneNumber);
+            SetVehicleMake(pVehicleMake);
+            SetVehicleModel(pVehicleModel);
+            SetVehicleYear(pVehicleYear);
+            SetVehicleColour(pVehicleColour);
+            SetEngOilChange(pEngOilChange);
+            SetTransOilChange(pTransOilChange);
+            SetAirFilterChange(pAirFilterChange);
+            SetTotalCost(pTotalCost);
         } 
         #endregion
 

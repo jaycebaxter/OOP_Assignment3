@@ -97,7 +97,7 @@
             
             Height="Auto"
             Width="Auto"
-            MinWidth="50"
+            MinWidth="100"
             Margin="0, 0, 0, 0"
             
             HorizontalAlignment="Left"
@@ -135,7 +135,7 @@
             
             Height="Auto"
             Width="Auto"
-            MinWidth="50"
+            MinWidth="100"
             Margin="0, 0, 0, 0"
             
             HorizontalAlignment="Left"
@@ -173,7 +173,7 @@
             
             Height="Auto"
             Width="Auto"
-            MinWidth="50"
+            MinWidth="100"
             Margin="0, 0, 0, 0"
             
             HorizontalAlignment="Left"
@@ -287,7 +287,7 @@
             
             Height="Auto"
             Width="Auto"
-            MinWidth="50"
+            MinWidth="100"
             Margin="0, 0, 0, 0"
             
             HorizontalAlignment="Left"
@@ -319,6 +319,7 @@
             ToolTip="Input your vehicle year"
             TabIndex="5"
             IsEditable="False"
+            SelectedIndex="0"
             
             FontSize="12"
             
@@ -385,7 +386,7 @@
             
             Height="Auto"
             Width="Auto"
-            MinWidth="50"
+            MinWidth="100"
             Margin="0, 0, 0, 0"
             
             HorizontalAlignment="Left"
@@ -434,7 +435,7 @@
             VerticalAlignment="Center" />
 
         <CheckBox
-            x:Name="TxtEngineOilChange"
+            x:Name="ChkEngineOilChange"
             ToolTip="Check to indicate you would like an engine oil change"
             TabIndex="7"
             
@@ -470,7 +471,7 @@
             VerticalAlignment="Center" />
 
         <CheckBox
-            x:Name="TxtTransmissionOilChange"
+            x:Name="ChkTransmissionOilChange"
             ToolTip="Check to indicate you would like a transmission oil change"
             TabIndex="8"
             
@@ -508,7 +509,7 @@
             VerticalAlignment="Center" />
 
         <CheckBox
-            x:Name="TxtAirFilterChange"
+            x:Name="ChkAirFilterChange"
             ToolTip="Check to indicate you would like an air filter change."
             TabIndex="9"
             
@@ -560,7 +561,7 @@
             
             Height="Auto"
             Width="Auto"
-            MinWidth="50"
+            MinWidth="100"
             Margin="0, 0, 0, 0"
             
             HorizontalAlignment="Left"
@@ -707,8 +708,24 @@
                   VerticalAlignment="Stretch"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto" 
                   ScrollViewer.VerticalScrollBarVisibility="Auto">
-            
-            // Add items back in
+
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Customer ID" DisplayMemberBinding="{Binding pCustomerID}" Width="180" />
+                    <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding pFirstName}" Width="180"/>
+                    <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding pLastName}" Width="180"/>
+                    <GridViewColumn Header="Phone Number" DisplayMemberBinding="{Binding pPhoneNumber}" Width="180" />
+                    <GridViewColumn Header="Make" DisplayMemberBinding="{Binding pVehicleMake}" Width="180" />
+                    <GridViewColumn Header="Model" DisplayMemberBinding="{Binding pVehicleModel}" Width="180" />
+                    <GridViewColumn Header="Year" DisplayMemberBinding="{Binding pVehicleYear}" Width="180" />
+                    <GridViewColumn Header="Colour" DisplayMemberBinding="{Binding pVehicleColour}" Width="180" />
+                    <GridViewColumn Header="Engine Oil Change" DisplayMemberBinding="{Binding pEngOilChange}" Width="180" />
+                    <GridViewColumn Header="Transmission Oil Change" DisplayMemberBinding="{Binding pTransOilChange}" Width="180" />
+                    <GridViewColumn Header="Air Filter Change" DisplayMemberBinding="{Binding pAirFilterChange}" Width="180" />
+                    <GridViewColumn Header="Total Cost" DisplayMemberBinding="{Binding pTotalCost}" Width="180" />
+                </GridView>
+            </ListView.View>
         </ListView>
         
     </Grid>

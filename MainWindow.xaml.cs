@@ -21,37 +21,69 @@ namespace WpfApp1
             InitializeComponent();
         }
 
-        // Add button
+        // Setting the cost before any services are selected
+        public const decimal initialTotalCost = 0;
+
+        // List of service objects 
+        private List<Service> listOfServices = new List<Service>();
+
+
+
+        /// <summary>
+        /// Add button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        // New button
+        /// <summary>
+        /// New button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnNew_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        // Update button
+        /// <summary>
+        /// Update button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnUpdate_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        // Remove button
+        /// <summary>
+        /// Remove button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRemove_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        // Remove all button
+        /// <summary>
+        /// Remove all button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRemoveAll_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        // Exit button
+        /// <summary>
+        /// Exit button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
