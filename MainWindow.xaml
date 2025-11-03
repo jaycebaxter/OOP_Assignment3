@@ -700,29 +700,15 @@
                   Grid.RowSpan="5"
                   
                   Height="Auto"
-                  Width="Auto"
+                  Width="800"
                   Margin="0, 10, 0, 0"
                   
-                  HorizontalAlignment="Stretch"
+                  HorizontalAlignment="Left"
                   VerticalAlignment="Stretch"
-                  ScrollViewer.HorizontalScrollBarVisibility="Visible" >
-
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Customer ID" DisplayMemberBinding="{Binding CustomerID}" Width="180" />
-                    <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FirstName}" Width="180"/>
-                    <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding LastName}" Width="180"/>
-                    <GridViewColumn Header="Phone Number" DisplayMemberBinding="{Binding PhoneNumber}" Width="180" />
-                    <GridViewColumn Header="Make" DisplayMemberBinding="{Binding VehicleMake}" Width="180" />
-                    <GridViewColumn Header="Model" DisplayMemberBinding="{Binding VehicleModel}" Width="180" />
-                    <GridViewColumn Header="Year" DisplayMemberBinding="{Binding VehicleYear}" Width="180" />
-                    <GridViewColumn Header="Colour" DisplayMemberBinding="{Binding VehicleColour}" Width="180" />
-                    <GridViewColumn Header="Engine Oil Change" DisplayMemberBinding="{Binding EngineOilChange}" Width="180" />
-                    <GridViewColumn Header="Transmission Oil Change" DisplayMemberBinding="{Binding TransmissionOilChange}" Width="180" />
-                    <GridViewColumn Header="Air Filter Change" DisplayMemberBinding="{Binding AirFilterChange}" Width="180" />
-                    <GridViewColumn Header="Total Cost" DisplayMemberBinding="{Binding TotalCost}" Width="180" />
-                </GridView>
-            </ListView.View>
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto" 
+                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+            
+            // Add items back in
         </ListView>
         
     </Grid>
