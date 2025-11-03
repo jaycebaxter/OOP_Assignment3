@@ -8,6 +8,7 @@ namespace WpfApp1
 {
     class Service
     {
+        #region variables
         private int count;
         private int customerID;
         private string? firstName;
@@ -20,7 +21,10 @@ namespace WpfApp1
         private bool engOilChange;
         private bool transOilChange;
         private bool airFilterChange;
-        private decimal totalCost;
+        private decimal totalCost; 
+        #endregion
+
+        #region defConst
 
         // Default constructor
         public Service()
@@ -39,12 +43,15 @@ namespace WpfApp1
             transOilChange = false;
             airFilterChange = false;
             totalCost = 0;
-        }
+        } 
+        #endregion
+
+        #region paraConst
 
         // Parameterized constructor
         // I'm using P to denote that it's a parameter instead of a variable name... so I don't get confused
         // Rename later?
-        public Service (string pFirstName, string pLastName, string pPhoneNumber, string pVehicleMake, string pVehicleModel, string pVehicleColour, int pVehicleYear, bool pEngOilChange, bool pTransOilChange, bool pAirFilterChange, decimal pTotalCost)
+        public Service(string pFirstName, string pLastName, string pPhoneNumber, string pVehicleMake, string pVehicleModel, string pVehicleColour, int pVehicleYear, bool pEngOilChange, bool pTransOilChange, bool pAirFilterChange, decimal pTotalCost)
         {
             firstName = pFirstName;
             lastName = pLastName;
@@ -57,7 +64,10 @@ namespace WpfApp1
             transOilChange = pTransOilChange;
             airFilterChange = pAirFilterChange;
             totalCost = pTotalCost;
-        }
+        } 
+        #endregion
+
+        #region getters
 
         // GETTERS
 
@@ -78,7 +88,7 @@ namespace WpfApp1
         {
             return firstName;
         }
-            
+
         /// <summary>
         /// Getter for lastName
         /// </summary>
@@ -160,6 +170,9 @@ namespace WpfApp1
             return totalCost;
         }
 
+        #endregion
+
+        #region setters
 
         // SETTERS
 
@@ -167,7 +180,7 @@ namespace WpfApp1
         /// Setter for firstName
         /// </summary>
         /// <param name="pFirstName"></param>
-        public void SetFirstName (string pFirstName)
+        public void SetFirstName(string pFirstName)
         {
             firstName = pFirstName;
         }
@@ -203,7 +216,7 @@ namespace WpfApp1
         /// Setter for vehicleModel
         /// </summary>
         /// <param name="pVehicleModel"></param>
-        public void SetVehicleModel (string pVehicleModel)
+        public void SetVehicleModel(string pVehicleModel)
         {
             vehicleModel = pVehicleModel;
         }
@@ -212,7 +225,7 @@ namespace WpfApp1
         /// Setter for vehicleColour
         /// </summary>
         /// <param name="pVehicleColour"></param>
-        public void SetVehicleColour (string pVehicleColour)
+        public void SetVehicleColour(string pVehicleColour)
         {
             vehicleColour = pVehicleColour;
         }
@@ -221,7 +234,7 @@ namespace WpfApp1
         /// Setter for vehicleYear
         /// </summary>
         /// <param name="pVehicleYear"></param>
-        public void SetVehicleYear (int pVehicleYear)
+        public void SetVehicleYear(int pVehicleYear)
         {
             vehicleYear = pVehicleYear;
         }
@@ -262,5 +275,36 @@ namespace WpfApp1
         {
             totalCost = pTotalCost;
         }
+        #endregion
+
+        #region totalCost
+
+        /// <summary>
+        /// Calculates the total cost depending on services chosen
+        /// </summary>
+        /// <returns> totalCost </returns>
+        public decimal CalculateTotalCost()
+        {
+            decimal tempCost = 0;
+
+            if (engOilChange == true)
+            {
+                tempCost = tempCost + (decimal)60;
+            }
+
+            if (transOilChange == true)
+            {
+                tempCost = tempCost + (decimal)120;
+            }
+
+            if (airFilterChange == true)
+            {
+                tempCost = tempCost + (decimal)40.5;
+            }
+
+            totalCost = tempCost;
+            return totalCost;
+        } 
+        #endregion
     }
 }
