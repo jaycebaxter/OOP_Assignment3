@@ -1,0 +1,729 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        
+        Title="Car Service Calculator" 
+        Height="800" 
+        Width="1000"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <!-- Header for customer information -->
+        <Label
+            x:Name="LblCustomerInformation"
+            Content="Customer Information: "
+            ToolTip="Customer information"
+            IsTabStop="False"
+            
+            FontSize="24"
+            
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Grid.Row="0"
+            
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+            
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" />
+
+        <!-- First name label and text box -->
+        <Label
+            x:Name="LblFirstName"
+            Content="First Name: "
+            ToolTip="First name"
+            IsTabStop="False"
+        
+            FontSize="12"
+        
+            Grid.Column="0"
+            Grid.Row="1"
+        
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+        
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" />
+
+        <TextBox
+            x:Name="TxtFirstName"
+            Text=""
+            ToolTip="Input your first name"
+            TabIndex="0"
+            
+            FontSize="12"
+            
+            Grid.Column="1"
+            Grid.Row="1"
+            
+            Height="Auto"
+            Width="Auto"
+            MinWidth="50"
+            Margin="0, 0, 0, 0"
+            
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" />
+
+        <!-- Last name label and text box -->
+        <Label
+            x:Name="LblLastName"
+            Content="Last Name: "
+            ToolTip="Last name"
+            IsTabStop="False"
+        
+            FontSize="12"
+        
+            Grid.Column="0"
+            Grid.Row="2"
+        
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+        
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" />
+
+        <TextBox
+            x:Name="TxtLastName"
+            Text=""
+            ToolTip="Input your last name"
+            TabIndex="1"
+            
+            FontSize="12"
+            
+            Grid.Column="1"
+            Grid.Row="2"
+            
+            Height="Auto"
+            Width="Auto"
+            MinWidth="50"
+            Margin="0, 0, 0, 0"
+            
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" />
+
+        <!-- Phone number label and text box -->
+        <Label
+            x:Name="LblPhoneNum"
+            Content="Phone Number: "
+            ToolTip="Phone Number"
+            IsTabStop="False"
+        
+            FontSize="12"
+        
+            Grid.Column="0"
+            Grid.Row="3"
+        
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+        
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" />
+
+        <TextBox
+            x:Name="TxtPhoneNumber"
+            Text=""
+            ToolTip="Input your phone number"
+            TabIndex="2"
+            
+            FontSize="12"
+            
+            Grid.Column="1"
+            Grid.Row="3"
+            
+            Height="Auto"
+            Width="Auto"
+            MinWidth="50"
+            Margin="0, 0, 0, 0"
+            
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" />
+
+
+
+        <!-- Header for vehicle information -->
+        <Label
+            x:Name="LblVehicleInformation"
+            Content="Vehicle Information: "
+            ToolTip="Vehicle information"
+            IsTabStop="False"
+            
+            FontSize="24"
+            
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Grid.Row="5"
+            
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+            
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" />
+
+
+
+        <!-- Vehicle make label and text box -->
+        <Label
+            x:Name="LblVehicleMake"
+            Content="Vehicle Make: "
+            ToolTip="Vehicle make"
+            IsTabStop="False"
+        
+            FontSize="12"
+        
+            Grid.Column="0"
+            Grid.Row="6"
+        
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+        
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" />
+
+        <ComboBox
+            x:Name="CmbVehicleMake"
+            Text=""
+            ToolTip="Input your vehicle make"
+            TabIndex="3"
+            IsEditable="False"
+            
+            FontSize="12"
+            
+            Grid.Column="1"
+            Grid.Row="6"
+            
+            Height="Auto"
+            Width="Auto"
+            MinWidth="50"
+            Margin="0, 0, 0, 0"
+            
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" >
+
+            <ComboBoxItem>Ford</ComboBoxItem>
+            <ComboBoxItem>Dodge</ComboBoxItem>
+            <ComboBoxItem>Honda</ComboBoxItem>
+            <ComboBoxItem>Nissan</ComboBoxItem>
+            <ComboBoxItem>Toyota</ComboBoxItem>
+            <ComboBoxItem>Chevrolet</ComboBoxItem>
+            <ComboBoxItem>Hyundai</ComboBoxItem>
+            <ComboBoxItem>BMW</ComboBoxItem>
+            <ComboBoxItem>Volkswagen</ComboBoxItem>
+        </ComboBox>
+          
+
+
+        <!-- Vehicle model label and text box -->
+        <Label
+            x:Name="LblVehicleModel"
+            Content="Vehicle Model: "
+            ToolTip="Vehicle model"
+            IsTabStop="False"
+        
+            FontSize="12"
+        
+            Grid.Column="0"
+            Grid.Row="7"
+        
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+        
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" />
+
+        <TextBox
+            x:Name="TxtVehicleModel"
+            Text=""
+            ToolTip="Input your vehicle model"
+            TabIndex="4"
+            
+            FontSize="12"
+            
+            Grid.Column="1"
+            Grid.Row="7"
+            
+            Height="Auto"
+            Width="Auto"
+            MinWidth="50"
+            Margin="0, 0, 0, 0"
+            
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" />
+
+
+        <!-- Vehicle year label and text box -->
+        <Label
+            x:Name="LblVehicleYear"
+            Content="Vehicle Year: "
+            ToolTip="Vehicle year"
+            IsTabStop="False"
+        
+            FontSize="12"
+        
+            Grid.Column="0"
+            Grid.Row="8"
+        
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+        
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" />
+
+        <ComboBox
+            x:Name="CmbVehicleYear"
+            Text=""
+            ToolTip="Input your vehicle year"
+            TabIndex="5"
+            IsEditable="False"
+            
+            FontSize="12"
+            
+            Grid.Column="1"
+            Grid.Row="8"
+            
+            Height="Auto"
+            Width="Auto"
+            MinWidth="50"
+            Margin="0, 0, 0, 0"
+            
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" >
+
+            <ComboBoxItem>2026</ComboBoxItem>
+            <ComboBoxItem>2025</ComboBoxItem>
+            <ComboBoxItem>2024</ComboBoxItem>
+            <ComboBoxItem>2023</ComboBoxItem>
+            <ComboBoxItem>2022</ComboBoxItem>
+            <ComboBoxItem>2021</ComboBoxItem>
+            <ComboBoxItem>2020</ComboBoxItem>
+            <ComboBoxItem>2019</ComboBoxItem>
+            <ComboBoxItem>2018</ComboBoxItem>
+            <ComboBoxItem>2017</ComboBoxItem>
+            <ComboBoxItem>2016</ComboBoxItem>
+            <ComboBoxItem>2015</ComboBoxItem>
+            <ComboBoxItem>2014</ComboBoxItem>
+            <ComboBoxItem>2013</ComboBoxItem>
+            <ComboBoxItem>2012</ComboBoxItem>
+            <ComboBoxItem>2011</ComboBoxItem>
+            <ComboBoxItem>2010</ComboBoxItem>
+        </ComboBox>
+
+
+        <!-- Vehicle colour label and text box -->
+        <Label
+            x:Name="LblVehicleColour"
+            Content="Vehicle Colour: "
+            ToolTip="Vehicle colour"
+            IsTabStop="False"
+        
+            FontSize="12"
+        
+            Grid.Column="0"
+            Grid.Row="9"
+        
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+        
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" />
+
+        <TextBox
+            x:Name="TxtVehicleColour"
+            Text=""
+            ToolTip="Input your vehicle colour"
+            TabIndex="6"
+            
+            FontSize="12"
+            
+            Grid.Column="1"
+            Grid.Row="9"
+            
+            Height="Auto"
+            Width="Auto"
+            MinWidth="50"
+            Margin="0, 0, 0, 0"
+            
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" />
+
+
+        <!-- Header for services -->
+        <Label
+            x:Name="LblServices"
+            Content="Services: "
+            ToolTip="Services"
+            IsTabStop="False"
+            
+            FontSize="24"
+            
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Grid.Row="11"
+            
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+            
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" />
+
+
+
+        <!-- Engine oil change label and text box -->
+        <Label
+            x:Name="LblEngineOilChange"
+            Content="Engine Oil Change: "
+            ToolTip="Engine oil change"
+            IsTabStop="False"
+        
+            FontSize="12"
+        
+            Grid.Column="0"
+            Grid.Row="12"
+        
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+        
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" />
+
+        <CheckBox
+            x:Name="TxtEngineOilChange"
+            ToolTip="Check to indicate you would like an engine oil change"
+            TabIndex="7"
+            
+            FontSize="12"
+            
+            Grid.Column="1"
+            Grid.Row="12"
+            
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+            
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" />
+
+        <!-- Transmission oil change label and check box -->
+        <Label
+            x:Name="LblTransmissionOilChange"
+            Content="Transmission Oil Change: "
+            ToolTip="Transmission oil change"
+            IsTabStop="False"
+        
+            FontSize="12"
+        
+            Grid.Column="0"
+            Grid.Row="13"
+        
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+        
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" />
+
+        <CheckBox
+            x:Name="TxtTransmissionOilChange"
+            ToolTip="Check to indicate you would like a transmission oil change"
+            TabIndex="8"
+            
+            FontSize="12"
+            
+            Grid.Column="1"
+            Grid.Row="13"
+            
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+            
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" />
+
+
+
+        <!-- Air filter change label and check box -->
+        <Label
+            x:Name="LblAirFilterChange"
+            Content="Air Filter Change: "
+            ToolTip="Air filter change"
+            IsTabStop="False"
+        
+            FontSize="12"
+        
+            Grid.Column="0"
+            Grid.Row="14"
+        
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+        
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" />
+
+        <CheckBox
+            x:Name="TxtAirFilterChange"
+            ToolTip="Check to indicate you would like an air filter change."
+            TabIndex="9"
+            
+            FontSize="12"
+            
+            Grid.Column="1"
+            Grid.Row="14"
+            
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+            
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" />
+
+
+        <!-- Header for total cost -->
+        <Label
+            x:Name="LblTotalCost"
+            Content="Total Cost: "
+            ToolTip="Total cost"
+            IsTabStop="False"
+            
+            FontSize="24"
+            
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Grid.Row="16"
+            
+            Height="Auto"
+            Width="Auto"
+            Margin="0, 0, 0, 0"
+            
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" />
+
+
+        <!-- Displays the total cost -->
+        <TextBox
+            x:Name="TxtTotalCostOutput"
+            Text=""
+            ToolTip="Total Cost: "
+            TabIndex="10"
+            
+            FontSize="12"
+            
+            Grid.Column="1"
+            Grid.Row="16"
+            
+            Height="Auto"
+            Width="Auto"
+            MinWidth="50"
+            Margin="0, 0, 0, 0"
+            
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" />
+
+        <!-- Add button -->
+        <Button
+            x:Name="BtnAdd"
+            Content="_Add"
+            ToolTip="Click to add, or press A"
+            TabIndex="11"
+            IsDefault="True"
+            
+            FontSize="12"
+            
+            Grid.Column="0"
+            Grid.Row="18"
+            
+            Height="Auto"
+            Width="Auto"
+            Margin="50, 10, 50, 10"
+            
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch" Click="BtnAdd_Click" />
+
+
+
+        <!-- New button -->
+        <Button
+            x:Name="BtnNew"
+            Content="_New"
+            ToolTip="Click to add new car, or press N"
+            TabIndex="12"
+            
+            FontSize="12"
+            
+            Grid.Column="1"
+            Grid.Row="18"
+            
+            Height="Auto"
+            Width="Auto"
+            Margin="50, 10, 50, 10"
+            
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch" Click="BtnNew_Click" />
+
+
+        <!-- Update button -->
+        <Button
+            x:Name="BtnUpdate"
+            Content="_Update"
+            ToolTip="Click to update, or press U"
+            TabIndex="13"
+            FontSize="12"
+            
+            Grid.Column="2"
+            Grid.Row="18"
+            
+            Height="Auto"
+            Width="Auto"
+            Margin="50, 10, 50, 10"
+            
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch" 
+            Click="BtnUpdate_Click" />
+
+
+        <!-- Remove button -->
+        <Button
+            x:Name="BtnRemove"
+            Content="_Remove"
+            ToolTip="Click to remove, or press R"
+            TabIndex="14"
+            
+            FontSize="12"
+            
+            Grid.Column="3"
+            Grid.Row="18"
+            
+            Height="Auto"
+            Width="Auto"
+            Margin="50, 10, 50, 10"
+            
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch" Click="BtnRemove_Click" />
+
+
+        <!-- Remove all button -->
+        <Button
+            x:Name="BtnRemoveAll"
+            Content="Re_move All"
+            ToolTip="Click to remove all, or press M"
+            TabIndex="15"
+            
+            FontSize="12"
+            
+            Grid.Column="4"
+            Grid.Row="18"
+            
+            Height="Auto"
+            Width="Auto"
+            Margin="50, 10, 50, 10"
+            
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch" Click="BtnRemoveAll_Click" />
+
+
+        <!-- Exit button -->
+        <Button
+            x:Name="BtnExit"
+            Content="E_xit"
+            ToolTip="Click to exit, or press X"
+            TabIndex="16"
+            
+            FontSize="12"
+            
+            Grid.Column="5"
+            Grid.Row="18"
+            
+            Height="Auto"
+            Width="Auto"
+            Margin="50, 10, 50, 10"
+            
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch" Click="BtnExit_Click" />
+        
+        <!-- Listview -->
+        <ListView x:Name="CustomerListView" 
+                  ToolTip="Table of customer information"
+                  IsTabStop="False"
+                  
+                  FontSize="12"
+                  
+                  Grid.Column="2"
+                  Grid.ColumnSpan="4"
+                  Grid.Row="0"
+                  Grid.RowSpan="5"
+                  
+                  Height="Auto"
+                  Width="Auto"
+                  Margin="0, 10, 0, 0"
+                  
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  ScrollViewer.HorizontalScrollBarVisibility="Visible" >
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Customer ID" DisplayMemberBinding="{Binding CustomerID}" Width="180" />
+                    <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FirstName}" Width="180"/>
+                    <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding LastName}" Width="180"/>
+                    <GridViewColumn Header="Phone Number" DisplayMemberBinding="{Binding PhoneNumber}" Width="180" />
+                    <GridViewColumn Header="Make" DisplayMemberBinding="{Binding VehicleMake}" Width="180" />
+                    <GridViewColumn Header="Model" DisplayMemberBinding="{Binding VehicleModel}" Width="180" />
+                    <GridViewColumn Header="Year" DisplayMemberBinding="{Binding VehicleYear}" Width="180" />
+                    <GridViewColumn Header="Colour" DisplayMemberBinding="{Binding VehicleColour}" Width="180" />
+                    <GridViewColumn Header="Engine Oil Change" DisplayMemberBinding="{Binding EngineOilChange}" Width="180" />
+                    <GridViewColumn Header="Transmission Oil Change" DisplayMemberBinding="{Binding TransmissionOilChange}" Width="180" />
+                    <GridViewColumn Header="Air Filter Change" DisplayMemberBinding="{Binding AirFilterChange}" Width="180" />
+                    <GridViewColumn Header="Total Cost" DisplayMemberBinding="{Binding TotalCost}" Width="180" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+    </Grid>
+</Window>
